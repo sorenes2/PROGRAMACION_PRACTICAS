@@ -3,20 +3,26 @@ package accesoficheros;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class EscribirFichero {
 
 	public void escribirConBuffer() {
+		Scanner sc = new Scanner(System.in);
 		
 		try {
 			FileWriter fw = new FileWriter("C:/Users/silvi/ejemplo3.txt", true);
 			BufferedWriter bw = new BufferedWriter(fw);
 			
-			bw.write("Primera linea con Buffer");
-			bw.newLine();
-			bw.write("Segunda linea con buffer");
-			bw.newLine();
+			String linea="";
+			while(!linea.equalsIgnoreCase("fin")) {
+				System.out.println("Introduce un texto");
+				linea = sc.nextLine();
+				bw.write(linea);
+				bw.newLine();
+			}
 			
+		
 			bw.close();
 			fw.close();
 			
