@@ -14,6 +14,8 @@ public class EscribirFichero {
 			
 			bw.write("Primera linea con Buffer");
 			bw.newLine();
+			int num = 1;
+			num = num*2;
 			bw.write("Segunda linea con buffer");
 			bw.newLine();
 			
